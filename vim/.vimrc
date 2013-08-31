@@ -19,6 +19,8 @@ syntax enable
 set encoding=utf8
 set tags=./tags;
 
+let NERDTreeShowHidden=1
+
 " color stuff
 set background=dark
 colorscheme solarized
