@@ -1,0 +1,113 @@
+snippet fdb-bsd "File level docblock with FreeBSD license" !b
+/**
+ * Copyright (c) ${1:year}, ${2:owner}
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met: 
+ * 
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer. 
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution. 
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * The views and conclusions contained in the software and documentation are those
+ * of the authors and should not be interpreted as representing official policies, 
+ * either expressed or implied, of the FreeBSD Project.
+ *
+ * PHP version ${3:5.3+}
+ *
+ * @copyright Copyright (c) $1 $2
+ * @license   ${4:license link} FreeBSD license
+ * @link      ${5:link to source code}
+ * @version   ${6:version number}
+ * @author    Peter Lind <peter.e.lind@gmail.com>
+ */
+endsnippet
+
+snippet md "Method docblock" b
+/**
+ * ${1:description}
+ *
+ * @param type $variable Description
+ *
+ * @access ${2:public}
+ * @return ${3:void}
+ */
+endsnippet
+
+snippet cd "Class docblock" b
+/**
+ * ${1:short description}
+ *
+ * @copyright ${2:copyright info}
+ * @license   ${3:license link}
+ * @version   ${4:version info}
+ * @author    ${5:author info}
+ */
+endsnippet
+
+snippet fd "Function docblock" b
+/**
+ * ${1:description}
+ *
+ * @param type $variable Description
+ *
+ * @return ${2:void}
+ */
+endsnippet
+
+snippet pm "Class method skeleton" b
+/**
+ * ${1:description}
+ *
+ * @param $5 $6 ${7:Description}
+ *
+ * @access ${2:public}
+ * @return ${3:void}
+ */
+$2 function ${4:someFunction}(${5:variable} ${6:variable})
+{
+}
+endsnippet
+
+snippet f "Function skeleton" b
+/**
+ * ${1:description}
+ *
+ * @param $4 $5 ${6:Description}
+ *
+ * @return ${2:void}
+ */
+function ${3:someFunction}(${4:type} ${5:variable})
+{
+}
+endsnippet
+
+snippet p "Class property" !b
+/**
+ * ${1:description}
+ *
+ * @var ${2:type}
+ */
+${3:private} $${4:property};
+endsnippet
+
+snippet dd "quick variable dump" !b
+echo "<pre>";
+print_r(${1:variable});
+echo "</pre>";
+exit;
+endsnippet
