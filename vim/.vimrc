@@ -17,6 +17,7 @@ set hidden
 set ruler
 syntax enable
 set encoding=utf8
+set tags=./tags;
 
 " color stuff
 set background=dark
