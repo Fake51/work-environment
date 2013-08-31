@@ -19,7 +19,11 @@ syntax enable
 set encoding=utf8
 set tags=./tags;
 
+" NERDTree
 let NERDTreeShowHidden=1
+
+" powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " color stuff
 set background=dark
