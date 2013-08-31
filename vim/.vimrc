@@ -22,10 +22,11 @@ set tags=./tags;
 " color stuff
 set background=dark
 colorscheme solarized
-call togglebg#map("<C-B>")
+call togglebg#map("<S-B>")
 
 let mapleader = ","
 
+" various commands
 nmap <TAB> :bn<CR>
 nmap <S-TAB> :bp<CR>
 nmap w!! :w !sudo tee %<CR>
@@ -34,8 +35,7 @@ nmap <Leader>t= :Tab /=<CR>
 vmap <Leader>t= :Tab /=<CR>
 nmap <Leader>t> :Tab /=><CR>
 vmap <Leader>t> :Tab /=><CR>
-
-imap <S-TAB> <C-o><<
+nmap <Leader>nt :NERDTreeToggle<CR>
 
 augroup mkd 
 
