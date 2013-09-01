@@ -19,18 +19,26 @@ syntax enable
 set encoding=utf8
 set tags=./tags;
 
+let mapleader = ","
+
 " NERDTree
 let NERDTreeShowHidden=1
 
 " powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
+" Vimux
+nmap <Leader>vc :VimuxCloseRunner<CR>
+nmap <Leader>vi :VimuxInterruptRunner<CR>
+nmap <Leader>vo :VimuxOpenPane<CR>
+nmap <Leader>vp :VimuxPromptCommand<CR>
+nmap <Leader>vr :call VimuxRunCommand("command")
+vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
+
 " color stuff
 set background=dark
 colorscheme solarized
 call togglebg#map("<S-B>")
-
-let mapleader = ","
 
 " various commands
 nmap <TAB> :bn<CR>

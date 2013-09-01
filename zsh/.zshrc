@@ -45,3 +45,8 @@ bindkey -M vicmd '?' history-incremental-pattern-search-forward
 # set up for insert mode too
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
+
+if [ -z "$TMUX" ]
+then
+    tmux attach || tmux new
+fi
