@@ -38,7 +38,7 @@ vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
 " color stuff
 set background=dark
 colorscheme solarized
-call togglebg#map("<S-B>")
+call togglebg#map("<Leader>bg")
 
 " various commands
 nmap <TAB> :bn<CR>
