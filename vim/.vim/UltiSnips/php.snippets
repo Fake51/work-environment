@@ -112,3 +112,12 @@ print_r(${1:variable});
 echo "</pre>";
 exit;
 endsnippet
+
+snippet tc "Try/catch construction" !b
+try {
+    ${2:code}
+
+} catch (${1:Exception} $e) {
+    ${3:code}
+}
+endsnippet

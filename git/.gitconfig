@@ -1,0 +1,17 @@
+[alias]
+	s = status
+    ci = commit
+    co = checkout
+    b = branch
+    cp = cherry-pick
+    a = add
+    cl = clone
+    d = diff
+    f = fetch
+    g = grep
+    i = init
+    l = log
+[push]
+	default = simple
+[core]
+	autocrlf = input

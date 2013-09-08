@@ -30,7 +30,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " Vimux
 nmap <Leader>vc :VimuxCloseRunner<CR>
 nmap <Leader>vi :VimuxInterruptRunner<CR>
-nmap <Leader>vo :VimuxOpenPane<CR>
 nmap <Leader>vp :VimuxPromptCommand<CR>
 nmap <Leader>vr :call VimuxRunCommand("command")
 vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
@@ -64,6 +63,8 @@ au BufReadPost *.php  set keywordprg=pman
 au BufReadPost *.html set keywordprg=pman
 
 au FileType php set omnifunc=phpcomplete#CompletePHP
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType css set omnifunc=csscomplete#CompleteCSS
 
 let g:debuggerPort = 10001
 let g:debuggerBreakAtEntry = 1
