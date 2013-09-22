@@ -78,7 +78,7 @@ snippet pm "Class method skeleton" b
  * @access ${2:public}
  * @return ${3:void}
  */
-$2 ${4:static} function ${5:someFunction}(${6:variable} ${7:variable})
+$2 ${4:static }function ${5:someFunction}(${6:variable} ${7:variable})
 {
     ${9:code}
 }
@@ -109,6 +109,13 @@ endsnippet
 snippet dd "quick variable dump" !b
 echo "<pre>";
 print_r(${1:variable});
+echo "</pre>";
+exit;
+endsnippet
+
+snippet dv "quick variable dump" !b
+echo "<pre>";
+var_dump(${1:variable});
 echo "</pre>";
 exit;
 endsnippet
