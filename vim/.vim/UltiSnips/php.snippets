@@ -73,14 +73,15 @@ snippet pm "Class method skeleton" b
 /**
  * ${1:description}
  *
- * @param $6 $7 ${8:Description}
+ * @param $7 $8 ${9:Description}
  *
- * @access ${2:public}
- * @return ${3:void}
+${2: * @throws Exception
+} * @access ${3:public}
+ * @return ${4:void}
  */
-$2 ${4:static }function ${5:someFunction}(${6:variable} ${7:variable})
+$3 ${5:static }function ${6:someFunction}(${7:variable} ${8:variable})
 {
-    ${9:code}
+    ${10:code}
 }
 endsnippet
 
@@ -127,4 +128,16 @@ try {
 } catch (${1:Exception} $e) {
     ${3:code}
 }
+endsnippet
+
+snippet te "Throw exception snippet" !b
+throw new ${1:Exception}('${2:Message}');
+endsnippet
+
+snippet hs "Header status" !b
+header('HTTP/1.1 ${1:200} ${2:Done}');
+endsnippet
+
+snippet hc "Header content" !b
+header('Content-Type: ${1:text/plain}; charset=${2:UTF-8}');
 endsnippet

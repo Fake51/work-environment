@@ -68,6 +68,18 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 
 let g:debuggerPort = 10001
 let g:debuggerBreakAtEntry = 1
-let g:debuggerMaxDepth = 3
+let g:debuggerMaxDepth = 5
 let g:user_zen_leader_key = ','
 let g:user_zen_expandabbr_key = 'Z'
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+  vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
