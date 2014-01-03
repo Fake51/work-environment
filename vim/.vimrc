@@ -34,6 +34,10 @@ nmap <Leader>vp :VimuxPromptCommand<CR>
 nmap <Leader>vr :call VimuxRunCommand("command")
 vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
 
+nmap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
+nmap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
+nmap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
+
 " color stuff
 set background=dark
 colorscheme solarized
