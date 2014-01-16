@@ -36,6 +36,7 @@ vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
 
 nmap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
 nmap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
+nmap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
 nmap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
 
 " color stuff
@@ -62,6 +63,7 @@ augroup END
 
 au BufRead *.php set ft=php.html
 au BufNewFile *.php set ft=php.html
+au BufNewFile,BufRead *.json set ft=javascript
 
 au BufReadPost *.php  set keywordprg=pman
 au BufReadPost *.html set keywordprg=pman
@@ -76,6 +78,7 @@ let g:debuggerBreakAtEntry = 1
 let g:debuggerMaxDepth = 5
 let g:user_zen_leader_key = ','
 let g:user_zen_expandabbr_key = 'Z'
+
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
