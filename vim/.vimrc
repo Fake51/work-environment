@@ -38,6 +38,7 @@ nmap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
 nmap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
 nmap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
 nmap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
+nmap <Leader>npt :call VimuxRunCommand("npm test")<CR>
 
 " color stuff
 set background=dark
@@ -72,6 +73,8 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType javascript call JavaScriptFold()
+
+au FileType php nmap <Leader>ps :call VimuxRunCommand("bin/phpspec run")<CR>
 
 let g:debuggerPort = 10001
 let g:debuggerBreakAtEntry = 1

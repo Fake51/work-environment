@@ -141,3 +141,10 @@ endsnippet
 snippet hc "Header content" !b
 header('Content-Type: ${1:text/plain}; charset=${2:UTF-8}');
 endsnippet
+
+snippet it "phpspec it function" !b
+function it_should_${1:do_something}()
+{
+    $this->${2:someFunction}(${3:arguments})->shouldReturn(${4:something});
+}
+endsnippet
