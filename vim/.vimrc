@@ -39,6 +39,9 @@ nmap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
 nmap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
 nmap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
 nmap <Leader>npt :call VimuxRunCommand("npm test")<CR>
+nmap <Leader>rr :call VimuxRunCommand("ruby " . bufname("%"))<CR>
+nmap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
+nmap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
 
 " color stuff
 set background=dark
@@ -80,8 +83,11 @@ let g:debuggerPort = 10001
 let g:debuggerBreakAtEntry = 1
 let g:debuggerMaxDepth = 5
 let g:user_zen_leader_key = ','
-let g:user_zen_expandabbr_key = 'Z'
 
+
+if $TERMINATOR_PROFILE == "solarized-light"
+    ToggleBG
+endif
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
