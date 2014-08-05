@@ -42,6 +42,7 @@ nmap <Leader>npt :call VimuxRunCommand("npm test")<CR>
 nmap <Leader>rr :call VimuxRunCommand("ruby " . bufname("%"))<CR>
 nmap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
 nmap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
+nmap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
 
 " color stuff
 set background=dark
@@ -65,9 +66,9 @@ augroup mkd
 
 augroup END 
 
-au BufRead *.php set ft=php.html
-au BufNewFile *.php set ft=php.html
+au BufNewFile,BufRead *.php set ft=php.html
 au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead Makefile set noexpandtab
 
 au BufReadPost *.php  set keywordprg=pman
 au BufReadPost *.html set keywordprg=pman
