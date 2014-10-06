@@ -1,0 +1,27 @@
+snippet #i "include directive" !b
+#include <${1:stdio.h}>
+endsnippet
+
+snippet main "main function declaration" !b
+int main(int argc, char *argv[]) {
+    ${1:code}
+
+	return ${2:0};
+}
+endsnippet
+
+snippet #d "define directive" !b
+#define ${1:NAME} ${2:value}
+endsnippet
+
+snippet func "function declaration" !b
+${1:returnValue} ${2:name}(${3:param});
+
+$1 $2($3) {
+
+}
+endsnippet
+
+snippet param "parameters" !w
+${1:type} ${2:name}${3:, }
+endsnippet
