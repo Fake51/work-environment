@@ -10,6 +10,7 @@ ZSH_THEME="alanpeabody"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pcs="phpcs --standard=Aalund"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

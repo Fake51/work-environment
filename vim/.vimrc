@@ -21,9 +21,6 @@ set tags=./tags;
 
 let mapleader = ","
 
-" NERDTree
-let NERDTreeShowHidden=1
-
 " powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -58,7 +55,6 @@ nmap <Leader>t= :Tab /=<CR>
 vmap <Leader>t= :Tab /=<CR>
 nmap <Leader>t> :Tab /=><CR>
 vmap <Leader>t> :Tab /=><CR>
-nmap <Leader>nt :NERDTreeToggle<CR>
 
 augroup mkd 
 
@@ -76,7 +72,6 @@ au BufReadPost *.html set keywordprg=pman
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType javascript call JavaScriptFold()
 
 au FileType php nmap <Leader>ps :call VimuxRunCommand("bin/phpspec run")<CR>
 
