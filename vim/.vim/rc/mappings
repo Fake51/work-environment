@@ -1,0 +1,29 @@
+" Vimux
+nmap <Leader>vc :VimuxCloseRunner<CR>
+nmap <Leader>vi :VimuxInterruptRunner<CR>
+nmap <Leader>vp :VimuxPromptCommand<CR>
+nmap <Leader>vr :call VimuxRunCommand("command")
+vmap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
+
+" linters and various other commands to run on buffers
+nmap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
+nmap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
+nmap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
+nmap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
+nmap <Leader>npt :call VimuxRunCommand("npm test")<CR>
+nmap <Leader>rr :call VimuxRunCommand("ruby " . bufname("%"))<CR>
+nmap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
+nmap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
+nmap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
+
+" various commands
+nmap <TAB> :bn<CR>
+nmap <S-TAB> :bp<CR>
+nmap w!! :w !sudo tee %<CR>
+map <Leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
+" tabularize
+nmap <Leader>t= :Tab /=<CR>
+vmap <Leader>t= :Tab /=<CR>
+nmap <Leader>t> :Tab /=><CR>
+vmap <Leader>t> :Tab /=><CR>
