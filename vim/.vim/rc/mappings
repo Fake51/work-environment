@@ -27,3 +27,7 @@ nmap <Leader>t= :Tab /=<CR>
 vmap <Leader>t= :Tab /=<CR>
 nmap <Leader>t> :Tab /=><CR>
 vmap <Leader>t> :Tab /=><CR>
+
+" location buffer next and previous
+nmap <Leader>cn :cn<CR>
+nmap <Leader>cp :cp<CR>
