@@ -16,6 +16,10 @@ nmap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
 nmap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
 nmap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
 
+" aalund specific
+nmap <Leader>pcs :call VimuxRunCommand("pcs " . bufname("%"))<CR>
+nmap <Leader>pub :call VimuxRunCommand("pub " . bufname("%"))<CR>
+
 " various commands
 nmap <TAB> :bn<CR>
 nmap <S-TAB> :bp<CR>

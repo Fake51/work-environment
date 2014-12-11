@@ -25,3 +25,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set background=dark
 colorscheme solarized
 call togglebg#map("<Leader>bg")
+
+" ultisnips settings - tmux blocks the default keys
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
