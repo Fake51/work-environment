@@ -15,6 +15,7 @@ set ruler
 syntax enable
 set encoding=utf8
 set tags=./tags;
+set relativenumber
 
 let mapleader = ","
 
