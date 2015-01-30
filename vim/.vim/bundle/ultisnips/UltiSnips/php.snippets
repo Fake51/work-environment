@@ -51,10 +51,6 @@ foreach ($${1:variable} as $${2:key} => $${3:value}){
 }
 endsnippet
 
-snippet get "get"
-$_GET['${1}']${2}
-endsnippet
-
 snippet if "if"
 if (${1:/* condition */}) {
 	${2:// code...}
@@ -75,10 +71,6 @@ endsnippet
 
 snippet req1 "req1"
 require_once '${1:file}';${2}
-endsnippet
-
-snippet session "session"
-$_SESSION['${1}']${2}
 endsnippet
 
 snippet t "t"
@@ -229,26 +221,6 @@ class $1
 $0
 endsnippet
 
-snippet pr "Dumb debug helper in HTML"
-echo '<pre>' . var_export($1, 1) . '</pre>';$0
-endsnippet
-
-snippet pc "Dumb debug helper in cli"
-var_export($1);$0
-endsnippet
-
-# Symfony 2 based snippets
-snippet sfa "Symfony 2 Controller action"
-/**
-* @Route("/${1:route_name}", name="$1")
-* @Template()
-*/
-public function $1Action($2)
-{
-    $3
-    return ${4:array();}$0
-}
-endsnippet
 
 # :vim:ft=snippets:
 
