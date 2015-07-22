@@ -1,6 +1,7 @@
 [global_config]
   title_transmit_bg_color = "#d30102"
   focus = system
+  window_state = maximise
 [keybindings]
 [profiles]
   [[default]]
