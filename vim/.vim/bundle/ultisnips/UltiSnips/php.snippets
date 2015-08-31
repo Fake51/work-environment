@@ -39,7 +39,7 @@ else {
 }
 endsnippet
 
-snippet for "for"
+snippet for "for" b
 for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
 	${4:// code...}
 }
@@ -51,7 +51,7 @@ foreach ($${1:variable} as $${2:key} => $${3:value}){
 }
 endsnippet
 
-snippet if "if"
+snippet if "if" b
 if (${1:/* condition */}) {
 	${2:// code...}
 }
@@ -61,7 +61,7 @@ snippet inc "inc"
 include '${1:file}';${2}
 endsnippet
 
-snippet log "log"
+snippet log "log" b
 error_log(var_export(${1}, true));${2}
 endsnippet
 
