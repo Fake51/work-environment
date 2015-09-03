@@ -13,6 +13,7 @@ nnoremap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true
 nnoremap <Leader>npt :call VimuxRunCommand("npm test")<CR>
 nnoremap <Leader>rr :call VimuxRunCommand("ruby " . bufname("%"))<CR>
 nnoremap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
+nnoremap <Leader>pl :call VimuxRunCommand("php -l " . bufname("%"))<CR>
 nnoremap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
 nnoremap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
 
