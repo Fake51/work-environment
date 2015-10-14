@@ -42,3 +42,9 @@ inoremap <C-U> <Esc>bveUea
 
 " sql mappings
 au FileType sql inoremap <C-i><C-i> <ESC>vby$a = @<ESC>pa, 
+
+" tslime
+let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_normal_mapping = '<Leader>s'
+let g:tslime_visual_mapping = '<Leader>s'
+let g:tslime_vars_mapping = '<Leader>S'

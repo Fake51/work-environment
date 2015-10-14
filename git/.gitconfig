@@ -39,3 +39,6 @@
   added = yellow
   changed = green
   untracked = cyan
+[user]
+	email = peter.e.lind@gmail.com
+	name = Peter Lind

@@ -56,5 +56,5 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 if [ -z "$TMUX" ]
 then
-    tmux attach || tmux new
+    tmux attach || sleep 1 && tmux
 fi
