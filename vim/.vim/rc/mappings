@@ -37,6 +37,9 @@ vnoremap <Leader>t> :Tab /=><CR>
 nnoremap <Leader>cn :cn<CR>
 nnoremap <Leader>cp :cp<CR>
 
+vnoremap <Leader>c "+y<CR>
+inoremap <C-v> <ESC>"+pi
+
 " various shortcuts
 inoremap <C-U> <Esc>bveUea
 
