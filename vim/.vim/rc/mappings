@@ -26,6 +26,7 @@ nnoremap <TAB> :bn<CR>
 nnoremap <S-TAB> :bp<CR>
 nnoremap w!! :w !sudo tee %<CR>
 noremap <Leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+noremap <Leader>uns <Esc>:%!php -r 'var_export(unserialize(file_get_contents("php://stdin")));'<CR>
 
 " tabularize
 nnoremap <Leader>t= :Tab /=<CR>
@@ -38,7 +39,7 @@ nnoremap <Leader>cn :cn<CR>
 nnoremap <Leader>cp :cp<CR>
 
 vnoremap <Leader>c "+y<CR>
-inoremap <C-v> <ESC>"+pi
+inoremap <Leader><Leader>v <ESC>"+pi
 
 " various shortcuts
 inoremap <C-U> <Esc>bveUea
