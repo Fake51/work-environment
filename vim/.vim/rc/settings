@@ -31,7 +31,7 @@ call togglebg#map("<Leader>bg")
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" vimux
+" vimux pane split
 let g:VimuxOrientation = "h"
 let g:VimuxHeight = "40"
 

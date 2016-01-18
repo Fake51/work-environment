@@ -170,12 +170,24 @@ snippet f "function skeleton" !b
 /**
  * ${1:description}
  *
- * @param ${5} $4 ${6:Description}
+ * @param $4 ${5:Description}
  *
  * @return ${2:void}
  */
 function ${3:name}(${4:parameter}) {
 }
+endsnippet
+
+snippet m "method skeleton" !b
+/**
+ * ${1:description}
+ *
+ * @param $4 ${5:Description}
+ *
+ * @return ${2:void}
+ */
+${3:name}: function (${4:parameter}) {
+},
 endsnippet
 
 snippet sef "Self-executing function" !b
@@ -197,4 +209,8 @@ snippet be "before" !b
 before(function () {
     $0
 });
+endsnippet
+
+snippet req "require" !b
+var ${1:module} = require('${2:name}');
 endsnippet
