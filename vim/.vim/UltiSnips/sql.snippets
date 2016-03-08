@@ -1,0 +1,16 @@
+snippet i18n "I18n insertion" !b
+SET @name        = '${1:phrase name}';
+SET @phrase      = '${2:phrase}';
+SET @phrasegroup = '${3:phrase group}';
+SET @lang        = '${4:da}';
+SET @site_id     = 1;
+
+INSERT INTO albeb_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alcf_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alfib_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alic_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alkm_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alod_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alprb_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+INSERT INTO alreb_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
+endsnippet

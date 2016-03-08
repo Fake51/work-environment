@@ -12,6 +12,8 @@ ZSH_THEME="alanpeabody"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pub="phpunit --bootstrap bootstrap.php"
 
+alias wgets='H="--header"; wget $H="Accept-Language: en-us,en;q=0.5" $H="Accept: text/htmlpplication/xhtml+xmlpplication/xml;q=0.9,*/*;q=0.8" $H="Connection: keep-alive" -U "Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3; Trident/7.0;  rv:11.0) like Gecko" --referer=/ '
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
