@@ -60,3 +60,6 @@ if [ -z "$TMUX" ]
 then
     tmux attach || sleep 1 && tmux
 fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
