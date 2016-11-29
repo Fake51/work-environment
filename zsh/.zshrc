@@ -40,7 +40,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export EDITOR=/usr/bin/vim
-export PATH=$HOME/bin:/usr/sbin:/sbin:$HOME/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export PATH=$HOME/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 
 bindkey -v
 # Search backwards and forwards with a pattern
