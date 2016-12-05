@@ -34,3 +34,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " vimux pane split
 let g:VimuxOrientation = "h"
 let g:VimuxHeight = "40"
+
+" tslime
+let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_normal_mapping = '<Leader>rs'
+let g:tslime_visual_mapping = '<Leader>rs'
+let g:tslime_vars_mapping = '<Leader>S'

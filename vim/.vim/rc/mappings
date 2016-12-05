@@ -17,6 +17,7 @@ nnoremap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
 nnoremap <Leader>pl :call VimuxRunCommand("php -l " . bufname("%"))<CR>
 nnoremap <Leader>rn :call VimuxRunCommand("node " . bufname("%"))<CR>
 nnoremap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
+nnoremap <Leader>sr :call VimuxRunCommand("racket -i -p neil/sicp -l xrepl")<CR>:set filetype=lisp<CR>
 
 " aalund specific
 nnoremap <Leader>pcs :call VimuxRunCommand("pcs " . bufname("%"))<CR>
@@ -47,9 +48,3 @@ inoremap <C-U> <Esc>bveUea
 
 " sql mappings
 au FileType sql inoremap <C-i><C-i> <ESC>vby$a = @<ESC>pa, 
-
-" tslime
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<Leader>s'
-let g:tslime_visual_mapping = '<Leader>s'
-let g:tslime_vars_mapping = '<Leader>S'
