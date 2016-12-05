@@ -10,6 +10,7 @@ nnoremap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
 nnoremap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
 nnoremap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
 nnoremap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
+nnoremap <Leader>esl :call VimuxRunCommand("eslint " . bufname("%"))<CR>
 nnoremap <Leader>npt :call VimuxRunCommand("npm test")<CR>
 nnoremap <Leader>rr :call VimuxRunCommand("ruby " . bufname("%"))<CR>
 nnoremap <Leader>rp :call VimuxRunCommand("php " . bufname("%"))<CR>
