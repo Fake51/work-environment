@@ -5,6 +5,7 @@ SET @phrasegroup = '${3:phrase group}';
 SET @lang        = '${4:da}';
 SET @site_id     = 1;
 
+INSERT INTO alah_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
 INSERT INTO alamp_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
 INSERT INTO albeb_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
 INSERT INTO alcf_i18n SET site_id = @site_id, phrasegroup = @phrasegroup, phrase = @phrase, lang = @lang, name = @name;
