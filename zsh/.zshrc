@@ -10,9 +10,11 @@ ZSH_THEME="alanpeabody"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pub="phpunit --bootstrap bootstrap.php"
-alias pcs="phpcs --standard=/var/www/aalundonline.com/phpcs/Aalund"
+alias pub="/var/www/www.aalundonline.com/bin/phpunit --bootstrap bootstrap.php"
+alias dpub="docker run --rm -v /var/www/www.aalundonline.com:/var/www/www.aalundonline.com  --network=docker_main -e aalund_site=docker_testing -e ENVIRONMENT=docker_testing --user 1000:1000  aalund-phpunit:5.6"
+alias pcs="phpcs --standard=/var/www/www.aalundonline.com/phpcs/Aalund"
 alias wgets='H="--header"; wget $H="Accept-Language: en-us,en;q=0.5" $H="Accept: text/htmlpplication/xhtml+xmlpplication/xml;q=0.9,*/*;q=0.8" $H="Connection: keep-alive" -U "Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2" --referer=/ '
+alias nr="npm run"
 
 alias wgets='H="--header"; wget $H="Accept-Language: en-us,en;q=0.5" $H="Accept: text/htmlpplication/xhtml+xmlpplication/xml;q=0.9,*/*;q=0.8" $H="Connection: keep-alive" -U "Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3; Trident/7.0;  rv:11.0) like Gecko" --referer=/ '
 
@@ -40,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export EDITOR=/usr/bin/vim
-export PATH=$HOME/bin:/usr/sbin:/sbin:$HOME/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export PATH=$HOME/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 
 bindkey -v
 # Search backwards and forwards with a pattern

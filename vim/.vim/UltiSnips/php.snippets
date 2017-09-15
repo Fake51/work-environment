@@ -117,7 +117,7 @@ endsnippet
 
 snippet dd "quick variable dump" !b
 echo "<pre>";
-print_r(${1:variable});
+print_r(logResultsRecurse([${1:variable}]));
 echo "</pre>";
 exit;
 endsnippet

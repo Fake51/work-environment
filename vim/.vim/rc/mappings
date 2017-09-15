@@ -7,6 +7,7 @@ vnoremap <Leader>vr y0:call VimuxRunCommand("<C-R>0")<CR>
 
 " linters and various other commands to run on buffers
 nnoremap <Leader>jsl :call VimuxRunCommand("jslint " . bufname("%"))<CR>
+nnoremap <Leader>esl :call VimuxRunCommand("eslint " . bufname("%"))<CR>
 nnoremap <Leader>jsh :call VimuxRunCommand("jshint " . bufname("%"))<CR>
 nnoremap <Leader>jm :call VimuxRunCommand("mocha " . bufname("%"))<CR>
 nnoremap <Leader>jswl :call VimuxRunCommand("jslint --sloppy=true --browser=true --regexp==true --maxerr=1000 --unparam=true --plusplus=true " . bufname("%"))<CR>
@@ -21,7 +22,7 @@ nnoremap <Leader>sr :call VimuxRunCommand("racket -i -p neil/sicp -l xrepl")<CR>
 
 " aalund specific
 nnoremap <Leader>pcs :call VimuxRunCommand("pcs " . bufname("%"))<CR>
-nnoremap <Leader>pub :call VimuxRunCommand("pub " . bufname("%"))<CR>
+nnoremap <Leader>pub :call VimuxRunCommand("dpub " . bufname("%"))<CR>
 
 " various commands
 nnoremap <TAB> :bn<CR>
