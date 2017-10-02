@@ -22,7 +22,7 @@ nnoremap <Leader>sr :call VimuxRunCommand("racket -i -p neil/sicp -l xrepl")<CR>
 
 " aalund specific
 nnoremap <Leader>pcs :call VimuxRunCommand("pcs " . bufname("%"))<CR>
-nnoremap <Leader>pub :call VimuxRunCommand("dpub " . bufname("%"))<CR>
+nnoremap <Leader>pub :call VimuxRunCommand("dpub $(pwd)/" . bufname("%"))<CR>
 
 " various commands
 nnoremap <TAB> :bn<CR>

@@ -129,6 +129,13 @@ echo "</pre>";
 exit;
 endsnippet
 
+snippet dvr "recursed variable dump" !b
+echo "<pre>";
+var_dump(logResultsRecurse(${1:variable}));
+echo "</pre>";
+exit;
+endsnippet
+
 snippet tc "Try/catch construction" !b
 try {
     ${2:code}
