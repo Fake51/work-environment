@@ -11,7 +11,7 @@ ZSH_THEME="alanpeabody"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pub="/var/www/www.aalundonline.com/bin/phpunit --bootstrap bootstrap.php"
-alias dpub="docker run --rm -v /var/www/www.aalundonline.com:/var/www/www.aalundonline.com  --network=docker_main -e aalund_site=docker_testing -e ENVIRONMENT=docker_testing --user 1000:1000  aalund-phpunit-zesty:5.6"
+alias dpub="docker run --rm -v /var/www/www.aalundonline.com:/var/www/www.aalundonline.com  --network=docker_main -e aalund_site=docker_testing -e ENVIRONMENT=docker_testing --user 1000:1000  aalund-phpunit:5.6"
 alias pcs="phpcs --standard=/var/www/www.aalundonline.com/phpcs/Aalund"
 alias wgets='H="--header"; wget $H="Accept-Language: en-us,en;q=0.5" $H="Accept: text/htmlpplication/xhtml+xmlpplication/xml;q=0.9,*/*;q=0.8" $H="Connection: keep-alive" -U "Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2" --referer=/ '
 alias nr="npm run"
