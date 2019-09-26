@@ -31,5 +31,5 @@ setopt VI
 
 if [ -z "$TMUX" ]
 then
-    tmux attach || sleep 1 && tmux
+    sleep 1 && (tmux attach || sleep 1 && tmux)
 fi
