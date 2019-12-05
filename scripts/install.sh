@@ -4,7 +4,7 @@ OLDPWD=`pwd`
 WD=$(realpath  $(dirname "$0")/..)
 cd $WD
 
-sudo apt install terminator fonts-powerline zsh vim tmux git curl wget
+sudo apt install terminator fonts-powerline zsh vim tmux git curl wget gnupg2
 
 sudo usermod -s $(which zsh) $(whoami)
 
@@ -21,7 +21,7 @@ ln -s $WD/vim/.vim $HOME/.vim
 ln -s $WD/fonts $HOME/.fonts
 
 # install node through n
-curl -L https://git.io/n-install | zsh
+curl -L https://git.io/n-install | bash
 
 # create folders for vim sensible settings
 mkdir -p ~/.local/share/vim/swap ~/.local/share/vim/backup ~/.local/share/vim/undo
