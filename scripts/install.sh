@@ -4,13 +4,10 @@ OLDPWD=`pwd`
 WD=$(realpath  $(dirname "$0")/..)
 cd $WD
 
-sudo apt install terminator fonts-powerline zsh vim tmux git curl wget gnupg2
-
-sudo usermod -s $(which zsh) $(whoami)
+sudo apt install -y terminator fonts-powerline zsh vim tmux git curl wget gnupg2 keepassxc elixir vim-doc
 
 # install antigen for zsh
 curl -L git.io/antigen > ~/antigen.zsh
-
 
 # symlink files and folders
 ln -s $WD/git/.gitconfig $HOME/.gitconfig
@@ -29,7 +26,16 @@ mkdir -p ~/.local/share/vim/swap ~/.local/share/vim/backup ~/.local/share/vim/un
 # update fonts
 fc-cache -rv
 
+sudo usermod -s $(which zsh) $(whoami)
+
 # install terminator profiles
 $WD/terminator/install.sh
+
+sed -i 's/https:\/\/github.com\//git@github.com:/' .git/config
+
+if which gnome-terminal
+then
+    sudo apt remove -y gnome-terminal
+fi
 
 cd $OLDPWD
