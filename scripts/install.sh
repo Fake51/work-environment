@@ -11,7 +11,7 @@ sudo apt-get update
 PHP_VERSION=`apt-cache search php | grep '^php[0-9.]\+ ' | sort -r | head -n 1 | cut -d ' ' -f 1`
 
 sudo apt install -y terminator fonts-powerline zsh vim tmux git curl wget gnupg2 keepassxc elixir vim-doc
-sudo apt install -y php$PHP_VERSION php-xdebug php$PHP_VERSION-bz2 php$PHP_VERSION-cli php$PHP_VERSION-fpm php$PHP_VERSION-curl php$PHP_VERSION-intl php$PHP_VERSION-json php$PHP_VERSION-mysql php$PHP_VERSION-opcache php$PHP_VERSION-sqlite3 php$PHP_VERSION-tidy php$PHP_VERSION-zip php$PHP_VERSION-readline php-yaml
+sudo apt install -y $PHP_VERSION php-xdebug $PHP_VERSION-bz2 $PHP_VERSION-cli $PHP_VERSION-fpm $PHP_VERSION-curl $PHP_VERSION-intl $PHP_VERSION-json $PHP_VERSION-mysql $PHP_VERSION-opcache $PHP_VERSION-sqlite3 $PHP_VERSION-tidy $PHP_VERSION-zip $PHP_VERSION-readline php-yaml
 
 # install antigen for zsh
 curl -L git.io/antigen > ~/antigen.zsh
