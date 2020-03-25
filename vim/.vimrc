@@ -1,11 +1,20 @@
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'honza/vim-snippets'
+Plug 'godlygeek/tabular'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-sensible'
 
-source ~/.vim/rc/settings
-source ~/.vim/rc/mappings
-source ~/.vim/rc/autocommands
-source ~/.vim/rc/scripts
+call plug#end()
 
-if $TERMINATOR_PROFILE == "solarized-light"
-    ToggleBG
-endif
+source ~/.vim/configs/coc
+source ~/.vim/configs/syntastic
+
+source ~/.vim/configs/personal
