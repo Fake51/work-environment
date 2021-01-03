@@ -7,6 +7,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle lein
+antigen bundle asdf
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-completions
 antigen bundle gradle
@@ -29,10 +30,9 @@ antigen apply
 export EDITOR=/usr/bin/vim
 setopt VI
 
-if [ -z "$TMUX" ]
-then
-    sleep 1 && (tmux attach || sleep 1 && tmux)
-fi
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 alias gpg=gpg2
+
+if [ -f "$HOME/.asdf/asdf.sh" ]
+then
+    . $HOME/.asdf/asdf.sh
+fi

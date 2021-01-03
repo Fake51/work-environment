@@ -42,3 +42,5 @@
 [user]
 	email = peter.e.lind@gmail.com
 	name = Peter Lind
+[pull]
+	rebase = false
