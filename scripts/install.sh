@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 OLDPWD=`pwd`
 WD=$(realpath  $(dirname "$0")/..)
 cd $WD
