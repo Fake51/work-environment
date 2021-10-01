@@ -1,10 +1,10 @@
 #!/bin/sh
-OLDPWD=`pwd`
+OLDPWD=$(pwd)
 WD=$(realpath  $(dirname "$0")/..)
-cd $WD
+cd "$WD" || exit 2
 
 create_link() {
-  if [ ! -f "$2" -a ! -d "$2" ]
+  if [ ! -f "$2" ] && [ ! -d "$2" ]
   then
     ln -s "$1" "$2"
   fi
@@ -55,6 +55,7 @@ if ! sudo apt install -y \
   vim \
   wget \
   zlib1g-dev \
+  fzf \
   zsh
 then
   echo "Aborting - failed to install packages"
@@ -73,15 +74,15 @@ else
 fi
 
 # symlink files and folders
-create_link $WD/git/.gitconfig $HOME/.gitconfig
-create_link $WD/zsh/.zshrc $HOME/.zshrc
-create_link $WD/tmux/.tmux.conf $HOME/.tmux.conf
-create_link $WD/vim/.vimrc $HOME/.vimrc
-create_link $WD/vim/.vim $HOME/.vim
-create_link $WD/fonts $HOME/.fonts
+create_link "$WD/git/.gitconfig" "$HOME/.gitconfig"
+create_link "$WD/zsh/.zshrc" "$HOME/.zshrc"
+create_link "$WD/tmux/.tmux.conf" "$HOME/.tmux.conf"
+create_link "$WD/vim/.vimrc" "$HOME/.vimrc"
+create_link "$WD/vim/.vim" "$HOME/.vim"
+create_link "$WD/fonts" "$HOME/.fonts"
 
 echo
-STACK=`which stack`
+STACK=$(which stack)
 if [ -z "$STACK" ]
 then
     # install haskell stack
@@ -98,7 +99,7 @@ mkdir -p ~/.local/share/vim/swap ~/.local/share/vim/backup ~/.local/share/vim/un
 if [ ! -d ~/.asdf ]
 then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-  cd ~/.asdf
+  cd ~/.asdf || exit 3
   git checkout "$(git describe --abbrev=0 --tags)"
 
   . $HOME/.asdf/asdf.sh

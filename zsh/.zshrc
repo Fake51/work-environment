@@ -36,3 +36,31 @@ if [ -f "$HOME/.asdf/asdf.sh" ]
 then
     . $HOME/.asdf/asdf.sh
 fi
+if [ -d '/usr/local/go/bin' ]
+then
+    export PATH=$PATH:/usr/local/go/bin
+fi
+
+if [ -d "/home/peter/.local/bin" ]
+then
+    export PATH=$PATH:/home/peter/.local/bin
+fi
+
+if [ -f "$HOME/.exports" ]
+then
+    . "$HOME/.exports"
+fi
+
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+if [[ ! -z $TMUX_PANE ]]
+then
+
+elif tmux ls >/dev/null 2>&1
+then
+    echo "Tmux session exists - not joining"
+else
+    tmux
+fi

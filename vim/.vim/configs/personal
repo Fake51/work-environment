@@ -37,7 +37,7 @@ nnoremap <Leader>cc :call VimuxRunCommand("g++ -Wall " . bufname("%"))<CR>
 nnoremap <TAB> :bn<CR>
 nnoremap <S-TAB> :bp<CR>
 nnoremap <Leader>w!! :w !sudo tee %<CR>
-noremap <Leader>jt  <Esc>:%!python -m json.tool<CR>
+noremap <Leader>jt  <Esc>:%!python3 -m json.tool<CR>
 
 " tabularize
 nnoremap <Leader>t= :Tab /=<CR>
