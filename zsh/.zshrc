@@ -41,9 +41,9 @@ then
     export PATH=$PATH:/usr/local/go/bin
 fi
 
-if [ -d "/home/peter/.local/bin" ]
+if [ -d "$HOME/.local/bin" ]
 then
-    export PATH=$PATH:/home/peter/.local/bin
+    export PATH=$PATH:$HOME/.local/bin
 fi
 
 if [ -f "$HOME/.exports" ]
@@ -51,6 +51,9 @@ then
     . "$HOME/.exports"
 fi
 
+if [[ -d "$HOME/.emacs/bin" ]] ; then
+    export PATH=$PATH:$HOME/.emacs/bin
+fi
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh

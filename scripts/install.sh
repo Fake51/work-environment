@@ -19,6 +19,7 @@ if ! sudo apt install -y \
   build-essential \
   curl \
   dirmngr \
+  emacs \
   fonts-powerline \
   fzf \
   gettext \
@@ -49,6 +50,7 @@ if ! sudo apt install -y \
   openssl \
   pkg-config \
   re2c \
+  ripgrep \
   software-properties-common \
   terminator \
   tmux \
@@ -168,6 +170,11 @@ if which gnome-terminal
 then
   echo "Removing gnome-terminal"
   sudo apt remove -y gnome-terminal
+fi
+
+if [[ ! -d "$HOME/.emacs.d" ]] ; then
+  git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install
 fi
 
 cd $OLDPWD
