@@ -51,7 +51,7 @@ then
     . "$HOME/.exports"
 fi
 
-if [[ -d "$HOME/.emacs/bin" ]] ; then
+if [[ -d "$HOME/.emacs.d/bin" ]] ; then
     export PATH=$PATH:$HOME/.emacs/bin
 fi
 
