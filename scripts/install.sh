@@ -20,6 +20,7 @@ if ! sudo apt install -y \
   curl \
   dirmngr \
   fonts-powerline \
+  fzf \
   gettext \
   git \
   gnupg2 \
@@ -43,6 +44,7 @@ if ! sudo apt install -y \
   libxml2-utils \
   libzip-dev \
   m4 \
+  neovim \
   openjdk-11-jdk \
   openssl \
   pkg-config \
@@ -52,10 +54,8 @@ if ! sudo apt install -y \
   tmux \
   unixodbc-dev \
   unzip \
-  vim \
   wget \
   zlib1g-dev \
-  fzf \
   zsh
 then
   echo "Aborting - failed to install packages"
