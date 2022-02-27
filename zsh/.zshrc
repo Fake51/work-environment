@@ -52,7 +52,7 @@ then
 fi
 
 if [[ -d "$HOME/.emacs.d/bin" ]] ; then
-    export PATH=$PATH:$HOME/.emacs/bin
+    export PATH=$PATH:$HOME/.emacs.d/bin
 fi
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
