@@ -32,6 +32,13 @@ setopt VI
 
 alias gpg=gpg2
 
+alias m=microk8s
+alias mk="m kubectl"
+alias mkg="mk get"
+alias mkgn="mkg nodes"
+alias mkgp="mkg pods"
+alias mke="mk edit"
+
 if [ -f "$HOME/.asdf/asdf.sh" ]
 then
     . $HOME/.asdf/asdf.sh
