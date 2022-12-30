@@ -73,6 +73,8 @@ else
     tmux
 fi
 
-source /home/peter/.oh-my-zsh/completions/boozt.zsh
+if [[ -f "/home/peter/.oh-my-zsh/completions/boozt.zsh" ]] ; then
+    source /home/peter/.oh-my-zsh/completions/boozt.zsh
+fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
