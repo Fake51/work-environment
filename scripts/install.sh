@@ -19,7 +19,9 @@ if ! sudo apt install -y \
   build-essential \
   curl \
   dirmngr \
+  emacs \
   fonts-powerline \
+  fzf \
   gettext \
   git \
   gnupg2 \
@@ -43,19 +45,19 @@ if ! sudo apt install -y \
   libxml2-utils \
   libzip-dev \
   m4 \
+  neovim \
   openjdk-11-jdk \
   openssl \
   pkg-config \
   re2c \
+  ripgrep \
   software-properties-common \
   terminator \
   tmux \
   unixodbc-dev \
   unzip \
-  vim \
   wget \
   zlib1g-dev \
-  fzf \
   zsh
 then
   echo "Aborting - failed to install packages"
@@ -168,6 +170,11 @@ if which gnome-terminal
 then
   echo "Removing gnome-terminal"
   sudo apt remove -y gnome-terminal
+fi
+
+if [[ ! -d "$HOME/.emacs.d" ]] ; then
+  git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install
 fi
 
 cd $OLDPWD

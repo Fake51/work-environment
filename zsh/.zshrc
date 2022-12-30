@@ -39,7 +39,7 @@ alias gs="git status"
 alias ap='arc patch --nocommit --nobranch'
 alias k=kubectl
 
-for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
+for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh" "/usr/local/go/bin"
 do
     if [ -f "$source" ]
     then
@@ -47,6 +47,17 @@ do
     fi
 done
 
+alias m=microk8s
+alias mk="m kubectl"
+alias mkg="mk get"
+alias mkgn="mkg nodes"
+alias mkgp="mkg pods"
+alias mke="mk edit"
+
+
+if [[ -d "$HOME/.emacs.d/bin" ]] ; then
+    export PATH=$PATH:$HOME/.emacs.d/bin
+fi
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
