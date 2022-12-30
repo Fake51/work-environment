@@ -11,10 +11,17 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-sensible'
+Plug 'towolf/vim-helm'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
+Plug 'GrzegorzKozub/vim-elixirls', { 'do': ':ElixirLsCompileSync' }
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
 source ~/.vim/configs/coc
-source ~/.vim/configs/syntastic
+" source ~/.vim/configs/syntastic
 
 source ~/.vim/configs/personal

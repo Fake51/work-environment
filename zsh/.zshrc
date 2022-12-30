@@ -1,59 +1,56 @@
-source ~/antigen.zsh
+for xtra_path in '/usr/local/go/bin' "$HOME/.local/bin" "$HOME/bin/boozt" "$HOME/bin"
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+if [ -d "$xtra_path" ]
+then
+    export PATH=$PATH:$xtra_path
+fi
+
+export ZSH_CACHE_DIR=$(realpath $HOME/.cache/oh-my-zsh)
+
+source <(antibody init)
+
+
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle pip
-antigen bundle lein
-antigen bundle asdf
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-completions
-antigen bundle gradle
-antigen bundle alexrochas/zsh-extract
-antigen bundle alexrochas/zsh-vim-crtl-z
-antigen bundle alexrochas/zsh-git-semantic-commits
-antigen bundle alexrochas/zsh-path-environment-explorer
-antigen bundle vi-mode
+antibody bundle ohmyzsh/ohmyzsh path:plugins/git
+antibody bundle ohmyzsh/ohmyzsh path:plugins/pip
+antibody bundle ohmyzsh/ohmyzsh path:plugins/kubectl
+antibody bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
+antibody bundle zsh-users/zsh-completions
+antibody bundle ohmyzsh/ohmyzsh path:plugins/gradle
+antibody bundle alexrochas/zsh-extract
+antibody bundle alexrochas/zsh-vim-crtl-z
+antibody bundle alexrochas/zsh-git-semantic-commits
+antibody bundle alexrochas/zsh-path-environment-explorer
+antibody bundle ohmyzsh/ohmyzsh path:plugins/vi-mode
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme.
-antigen theme robbyrussell/oh-my-zsh themes/agnoster
-
-# Tell Antigen that you're done.
-antigen apply
+antibody bundle robbyrussell/oh-my-zsh path:lib
+antibody bundle robbyrussell/oh-my-zsh path:themes/agnoster.zsh-theme
+##
+## Syntax highlighting bundle.
+antibody bundle zsh-users/zsh-syntax-highlighting
 
 
 export EDITOR=/usr/bin/vim
 setopt VI
 
 alias gpg=gpg2
+alias gs="git status"
+alias ap='arc patch --nocommit --nobranch'
+alias k=kubectl
 
-if [ -f "$HOME/.asdf/asdf.sh" ]
-then
-    . $HOME/.asdf/asdf.sh
-fi
-if [ -d '/usr/local/go/bin' ]
-then
-    export PATH=$PATH:/usr/local/go/bin
-fi
-
-if [ -d "/home/peter/.local/bin" ]
-then
-    export PATH=$PATH:/home/peter/.local/bin
-fi
-
-if [ -f "$HOME/.exports" ]
-then
-    . "$HOME/.exports"
-fi
+for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
+do
+    if [ -f "$source" ]
+    then
+        . $source
+    fi
+done
 
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
+
 
 if [[ ! -z $TMUX_PANE ]]
 then
@@ -64,3 +61,7 @@ then
 else
     tmux
 fi
+
+source /home/peter/.oh-my-zsh/completions/boozt.zsh
+
+export PATH="$HOME/.poetry/bin:$PATH"
