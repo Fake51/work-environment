@@ -46,6 +46,9 @@ nmap <Leader>t :Tags<CR>
 " various shortcuts
 inoremap <C-U> <Esc>bveUea
 
+" auto formatting of rust
+let g:rustfmt_autosave = 1
+
 " from https://code.google.com/p/lh-vim/source/browse/misc/trunk/macros/repl-visual-no-reg-overwrite.vim
 "
 "=============================================================================

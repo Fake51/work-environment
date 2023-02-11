@@ -177,4 +177,12 @@ if [[ ! -d "$HOME/.emacs.d" ]] ; then
   ~/.emacs.d/bin/doom install
 fi
 
+if [[ ! -d "$HOME/bin" ]] ; then
+  mkdir "$HOME/bin"
+fi
+
+if ! which cargo ; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
 cd $OLDPWD
