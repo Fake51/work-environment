@@ -73,4 +73,8 @@ if [[ -f "/home/peter/.oh-my-zsh/completions/boozt.zsh" ]] ; then
     source /home/peter/.oh-my-zsh/completions/boozt.zsh
 fi
 
+if which flux > /dev/null ; then
+    . <(flux completion zsh)
+fi
+
 export PATH="$HOME/.poetry/bin:$PATH"
