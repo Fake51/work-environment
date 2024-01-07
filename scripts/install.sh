@@ -14,50 +14,18 @@ create_link() {
 echo
 echo "Installing packages"
 if ! sudo apt install -y \
-  autoconf \
-  bison \
-  build-essential \
   curl \
   dirmngr \
-  emacs \
   fonts-powerline \
   fzf \
-  gettext \
   git \
-  gnupg2 \
   keepassxc \
-  libcurl4-openssl-dev \
-  libedit-dev \
-  libgd-dev \
-  libicu-dev \
-  libjpeg-dev \
-  libmysqlclient-dev \
-  libncurses-dev \
-  libncurses5-dev \
-  libonig-dev \
-  libpng-dev \
-  libpq-dev \
-  libreadline-dev \
-  libsqlite3-dev \
-  libssh-dev \
-  libssl-dev \
-  libxml2-dev \
-  libxml2-utils \
-  libzip-dev \
-  m4 \
   neovim \
-  openjdk-11-jdk \
   openssl \
-  pkg-config \
-  re2c \
   ripgrep \
-  software-properties-common \
   terminator \
   tmux \
-  unixodbc-dev \
   unzip \
-  wget \
-  zlib1g-dev \
   zsh
 then
   echo "Aborting - failed to install packages"
@@ -170,11 +138,6 @@ if which gnome-terminal
 then
   echo "Removing gnome-terminal"
   sudo apt remove -y gnome-terminal
-fi
-
-if [[ ! -d "$HOME/.emacs.d" ]] ; then
-  git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-  ~/.emacs.d/bin/doom install
 fi
 
 if [[ ! -d "$HOME/bin" ]] ; then
