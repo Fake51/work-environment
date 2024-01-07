@@ -185,4 +185,23 @@ if ! which cargo ; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
+if ! which kubectl ; then
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+fi
+
+if [ ! -d "$HOME/.config/nvim" ] ; then
+  mkdir -p "$HOME/.config/nvim"
+fi
+
+if [ ! -f "$HOME/.config/nvim" ] ; then
+  echo << EOF > "$HOME/.config/nvim"
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+EOF
+fi
+
 cd $OLDPWD

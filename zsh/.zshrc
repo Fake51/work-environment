@@ -38,6 +38,9 @@ alias gpg=gpg2
 alias gs="git status"
 alias ap='arc patch --nocommit --nobranch'
 alias k=kubectl
+alias kg="k get"
+alias ke="k edit"
+alias kd="k describe"
 
 for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh" "/usr/local/go/bin"
 do
@@ -46,13 +49,6 @@ do
         . $source
     fi
 done
-
-alias m=microk8s
-alias mk="m kubectl"
-alias mkg="mk get"
-alias mkgn="mkg nodes"
-alias mkgp="mkg pods"
-alias mke="mk edit"
 
 
 if [[ -d "$HOME/.emacs.d/bin" ]] ; then
