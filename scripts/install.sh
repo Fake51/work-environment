@@ -155,8 +155,8 @@ if ! which kubectl ; then
   sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 fi
 
-if [ ! -d "$HOME/.config/nvim" ] ; then
-  mkdir -p "$HOME/.config/nvim"
+if [ ! -d "$HOME/.config" ] ; then
+  mkdir -p "$HOME/.config"
 fi
 
 if [ ! -f "$HOME/.config/nvim" ] ; then
