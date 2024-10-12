@@ -13,6 +13,11 @@ set writebackup
 let mapleader = ","
 set undofile
 
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
 syntax enable
 set background=light
 colorscheme solarized
@@ -24,6 +29,54 @@ set encoding=utf8
 set backupdir=~/.local/share/vim/backup
 set directory=~/.local/share/vim/swap
 set undodir=~/.local/share/vim/undo
+
+" enable go language server for vim-go and other go stuff
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+" disable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+" leader+t: starts test
+autocmd BufEnter *.go nmap <leader>t  <Plug>(go-test)
+
+" leader+i: function signature
+autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
+
+" leader+ii: implemented interfaces
+autocmd BufEnter *.go nmap <leader>ii  <Plug>(go-implements)
+
+" leader+ci: show type definition
+autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
+
+" See the callers of a given function with \ + cc:
+autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
+
+"Find all references of a given type/function in the codebase with \ + cr:
+nmap <leader>cr <Plug>(coc-references)
+
+" Go to definition/Go back with Ctrl+d and Ctrl+a:
+nmap <C-a> <C-o>
+nmap <C-d> <Plug>(coc-definition)
 
 " various commands
 nnoremap <TAB> :bn<CR>
@@ -124,17 +177,6 @@ vnoremap <silent> # :<C-U>
 "---------------------------
 " coc mappings and functions
 "===========================
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-  \ coc#pum#visible() ? coc#pum#next(1):
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
