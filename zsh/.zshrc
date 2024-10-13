@@ -56,7 +56,7 @@ alias kbusy="kdebug--image=busybox:latest"
 alias kubuntu="kdebug --image=ubuntu:oracular"
 alias kdiff="k diff -f"
 
-for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh" "/usr/local/go/bin"
+for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
 do
     if [ -f "$source" ]
     then
@@ -91,4 +91,6 @@ if which flux > /dev/null ; then
     . <(flux completion zsh)
 fi
 
-export PATH="$HOME/.poetry/bin:$PATH"
+GO_BINARIES=$(asdf where golang)/packages/bin
+
+export PATH="$HOME/.poetry/bin:$PATH:$GO_BINARIES"
