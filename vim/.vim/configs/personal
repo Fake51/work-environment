@@ -12,6 +12,7 @@ set backup
 set writebackup
 let mapleader = ","
 set undofile
+set nofixeol
 
 syntax enable
 set background=light
@@ -34,9 +35,21 @@ noremap <Leader>jt  <Esc>:%!python3 -m json.tool<CR>
 nnoremap <Leader>cn :cn<CR>
 nnoremap <Leader>cp :cp<CR>
 
+" copy paste into/from system buffers
 vnoremap <Leader>c "+y<CR>
 inoremap <Leader><Leader>v <ESC>"+pa
 nnoremap <Leader>v "+P
+
+" use selection for recursive grep
+vnoremap <Leader>g y:vimgrep <c-r>0 **/*<CR>:copen<CR>
+
+" snippets
+let g:UltiSnipsExpandTrigger="<Leader>,"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " fzf
 nmap ; :Buffers<CR>

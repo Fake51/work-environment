@@ -1,6 +1,6 @@
 #!/bin/bash
 OLDPWD=$(pwd)
-WD=$(realpath  $(dirname "$0")/..)
+WD=$(realpath  "$(dirname "$0")/..")
 cd "$WD" || exit 2
 
 create_link() {
@@ -160,11 +160,11 @@ if [ ! -d "$HOME/.config" ] ; then
 fi
 
 if [ ! -f "$HOME/.config/nvim" ] ; then
-  echo << EOF > "$HOME/.config/nvim"
+  cat << EOF > "$HOME/.config/nvim"
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 EOF
 fi
 
-cd $OLDPWD
+cd "$OLDPWD" || exit 1

@@ -19,6 +19,7 @@ Plug 'GrzegorzKozub/vim-elixirls', { 'do': ':ElixirLsCompileSync' }
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
+Plug 'sirver/ultisnips'
 
 call plug#end()
 

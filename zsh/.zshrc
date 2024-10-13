@@ -1,4 +1,4 @@
-for xtra_path in '/usr/local/go/bin' "$HOME/.local/bin" "$HOME/bin/boozt" "$HOME/bin"
+for xtra_path in '/usr/local/go/bin' "$HOME/.local/bin" "$HOME/bin/boozt" "$HOME/bin" "$HOME/.kubescape/bin"
 
 if [ -d "$xtra_path" ]
 then
@@ -36,11 +36,25 @@ setopt VI
 
 alias gpg=gpg2
 alias gs="git status"
-alias ap='arc patch --nocommit --nobranch'
+alias gpmr="gp -o merge_request.create"
 alias k=kubectl
 alias kg="k get"
 alias ke="k edit"
 alias kd="k describe"
+alias kge="kg events"
+alias kgy="kg -o yaml"
+alias kgpy="kgp -o yaml"
+alias gnb="(gco master || gco main) && gl && gco"
+alias ktp="k top pod "
+alias ktn="k top node "
+alias ka="k apply -f"
+alias kadc="k apply --dry-run=client -f"
+alias kads="k apply --dry-run=server -f"
+alias vim=nvim
+alias kdebug="k run --restart=Never --rm=true -ti debugger"
+alias kbusy="kdebug--image=busybox:latest"
+alias kubuntu="kdebug --image=ubuntu:oracular"
+alias kdiff="k diff -f"
 
 for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh" "/usr/local/go/bin"
 do
