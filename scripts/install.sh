@@ -31,10 +31,10 @@ fi
 
 echo
 
-# install antigen for zsh
-if [ ! -f ~/antigen.zsh ]; then
+# install antibody for zsh
+if ! which antibody ; then
 	echo "Installing Antigen for zsh"
-	curl -L git.io/antigen >~/antigen.zsh
+	curl -sfL git.io/antibody | sh -s - -b /$HOME/.local/bin
 else
 	echo "Antigen in place, skipping"
 fi
