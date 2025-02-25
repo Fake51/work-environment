@@ -34,22 +34,13 @@ antibody bundle zsh-users/zsh-syntax-highlighting
 export EDITOR=/usr/bin/vim
 setopt VI
 
-for source in "$HOME/.exports" "$HOME/.aliases" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
+for source in "$HOME/.exports" "$HOME/.aliases" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc"
 do
     if [ -f "$source" ]
     then
         . $source
     fi
 done
-
-
-if [[ -d "$HOME/.emacs.d/bin" ]] ; then
-    export PATH=$PATH:$HOME/.emacs.d/bin
-fi
-
-if [[ -d "/opt/nvim-linux64/bin" ]] ; then
-  export PATH=$PATH:/opt/nvim-linux64/bin
-fi
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
@@ -90,3 +81,4 @@ fi
 GO_BINARIES=$(asdf where golang)/packages/bin
 
 export PATH="$HOME/.poetry/bin:$PATH:$GO_BINARIES"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
