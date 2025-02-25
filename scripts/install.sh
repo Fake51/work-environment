@@ -58,11 +58,10 @@ fi
 
 # install asdf
 if [ ! -d ~/.asdf ]; then
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-	cd ~/.asdf || exit 3
-	git checkout "$(git describe --abbrev=0 --tags)"
-
-	. $HOME/.asdf/asdf.sh
+	curl -Lo asdf.tar.gz https://github.com/asdf-vm/asdf/releases/download/v0.16.4/asdf-v0.16.4-linux-amd64.tar.gz
+	tar -xvzf asdf.tar.gz
+	mv asdf $HOME/.local/bin/
+	rm asdf.tar.gz
 fi
 
 echo
