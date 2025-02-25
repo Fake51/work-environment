@@ -33,10 +33,10 @@ echo
 
 # install antibody for zsh
 if ! which antibody ; then
-	echo "Installing Antigen for zsh"
+	echo "Installing Antibody for zsh"
 	curl -sfL git.io/antibody | sh -s - -b /$HOME/.local/bin
 else
-	echo "Antigen in place, skipping"
+	echo "Antibody in place, skipping"
 fi
 
 # symlink files and folders
