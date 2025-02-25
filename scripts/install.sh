@@ -18,6 +18,7 @@ if ! sudo apt install -y \
   dirmngr \
   fonts-powerline \
   fzf \
+  gettext \
   git \
   keepassxc \
   openssl \
