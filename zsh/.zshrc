@@ -34,29 +34,7 @@ antibody bundle zsh-users/zsh-syntax-highlighting
 export EDITOR=/usr/bin/vim
 setopt VI
 
-alias gpg=gpg2
-alias gs="git status"
-alias gpmr="gp -o merge_request.create"
-alias k=kubectl
-alias kg="k get"
-alias ke="k edit"
-alias kd="k describe"
-alias kge="kg events"
-alias kgy="kg -o yaml"
-alias kgpy="kgp -o yaml"
-alias gnb="(gco master || gco main) && gl && gco"
-alias ktp="k top pod "
-alias ktn="k top node "
-alias ka="k apply -f"
-alias kadc="k apply --dry-run=client -f"
-alias kads="k apply --dry-run=server -f"
-alias vim=nvim
-alias kdebug="k run --restart=Never --rm=true -ti debugger"
-alias kbusy="kdebug--image=busybox:latest"
-alias kubuntu="kdebug --image=ubuntu:oracular"
-alias kdiff="k diff -f"
-
-for source in "$HOME/.exports" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
+for source in "$HOME/.exports" "$HOME/.aliases" "$HOME/google-cloud-sdk/completion.zsh.inc" "$HOME/google-cloud-sdk/path.zsh.inc" "$HOME/.asdf/asdf.sh"
 do
     if [ -f "$source" ]
     then
@@ -69,8 +47,13 @@ if [[ -d "$HOME/.emacs.d/bin" ]] ; then
     export PATH=$PATH:$HOME/.emacs.d/bin
 fi
 
+if [[ -d "/opt/nvim-linux64/bin" ]] ; then
+  export PATH=$PATH:/opt/nvim-linux64/bin
+fi
+
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
+source ~/.local/share/kubebuilder/completion.zsh
 
 
 if [[ ! -z $TMUX_PANE ]]
@@ -80,7 +63,20 @@ elif tmux ls >/dev/null 2>&1
 then
     echo "Tmux session exists - not joining"
 else
-    tmux
+    tmux new -s "tmuxy" -n "sql" \; \
+      new-window -n "boozt-cli" -d \; \
+      new-window -n "projects" -d \; \
+      new-window -n "terraform-gcp" -d \; \
+      new-window -n "k8s" -d \; \
+      new-window -n "helm" -d \; \
+      new-window -n "images" -d \; \
+      send-keys -t tmuxy:sql "cd ~/Sites/cloudsql/" C-m \; \
+      send-keys -t tmuxy:boozt-cli "cd ~/Sites/boozt-cli/" C-m \; \
+      send-keys -t tmuxy:projects "cd ~/Sites" C-m \; \
+      send-keys -t tmuxy:terraform-gcp "cd ~/Sites/terraform-gcp/" C-m \; \
+      send-keys -t tmuxy:k8s "cd ~/Sites/prod-euw1/" C-m \; \
+      send-keys -t tmuxy:helm "cd ~/Sites/helm-charts/" C-m \; \
+      send-keys -t tmuxy:images "cd ~/Sites/base-images/" C-m
 fi
 
 if [[ -f "/home/peter/.oh-my-zsh/completions/boozt.zsh" ]] ; then

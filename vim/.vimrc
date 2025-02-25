@@ -14,7 +14,7 @@ Plug 'tpope/vim-sensible'
 Plug 'towolf/vim-helm'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
